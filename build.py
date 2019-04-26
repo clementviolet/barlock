@@ -16,10 +16,9 @@ common_flags = [
     "--filter", "pandoc-eqnos",
     "--filter", "pandoc-tablenos",
     "--filter", "pandoc-citeproc",
-    "--bibliography", "references.json",
+    "--bibliography=references.json",
     "--metadata-file=.zenodo.json"
 ]
 
 # Version for the website
-subprocess.run(root + ["-o", "index.md", "--template", "templates/index.md"] + common_flags)
-subprocess.run(["cat", "index.md"])
+subprocess.run(root + ["-o", "index.html", "--template", "templates/index.html"] + common_flags)
