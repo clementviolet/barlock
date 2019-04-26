@@ -27,5 +27,5 @@ versions = {
 }
 
 for version in versions:
-    info(version)
+    logging.info(version)
     subprocess.run(root + versions[version]  + common_flags)
