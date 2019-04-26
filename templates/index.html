@@ -1,19 +1,29 @@
-<header>
-  <h1>$title$</h1>
-  <section class="creators">
-    $for(creators)$
-    <span>$creators.familyname$, $creators.givennames$ -- $creators.affiliation$</span>
-    $endfor$
-  </section>
-  <section class="abstract">
-    $description$
-  </section>
-</header>
+<!DOCTYPE html>
+<html lang="$language$" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>$title$</title>
+</head>
+<body>
+  <header>
+    <h1>$title$</h1>
+    <section class="creators">
+      $for(creators)$
+      <span>$creators.familyname$, $creators.givennames$ -- $creators.affiliation$</span>
+      $endfor$
+    </section>
+    <section class="abstract">
+      $description$
+    </section>
+  </header>
 
-<nav class="artifacts">
-  <a href="">text</a>
-</nav>
+  <nav class="artifacts">
+    <a href="">text</a>
+  </nav>
 
-<article class="text">
-  $body$
-</article>
+  <article class="text">
+    $body$
+  </article>
+
+</body>
+</html>
