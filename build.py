@@ -16,7 +16,8 @@ common_flags = [
     "--filter", "pandoc-eqnos",
     "--filter", "pandoc-tablenos",
     "--filter", "pandoc-citeproc",
-    "--bibliography", "references.json"
+    "--bibliography", "references.json",
+    "--metadata-file=.zenodo.json"
 ]
 
 # Version for the website
