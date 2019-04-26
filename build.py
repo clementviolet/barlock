@@ -20,5 +20,10 @@ common_flags = [
     "--metadata-file=.zenodo.json"
 ]
 
-# Version for the website
-subprocess.run(root + ["-o", "index.html", "--template", "templates/index.html"] + common_flags)
+versions = {
+    "Website index": ["-o", "index.html", "--template", "templates/index.html"]
+}
+
+for version in versions:
+    info(version)
+    subprocess.run(root + versions[version]  + common_flags)
