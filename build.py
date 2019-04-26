@@ -1,5 +1,6 @@
 import subprocess
 import json
+import logging
 
 with open(".zenodo.json", 'r') as f:
     zenodo = json.load(f)
