@@ -1,11 +1,18 @@
 <header>
   <h1>$title$</h1>
-  <div class="creators">
+  <section class="creators">
     $for(creators)$
     <span>$creators.familyname$, $creators.givennames$ -- $creators.affiliation$</span>
     $endfor$
-  </div>
+  </section>
+  <section class="abstract">
+    $description$
+  </section>
 </header>
+
+<nav class="artifacts">
+  <a href=""
+</nav>
 
 <article class="text">
   $body$
