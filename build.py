@@ -22,11 +22,9 @@ common_flags = [
 ]
 
 versions = {
-    "Website index": ["-o", "index.html", "--template", "templates/index.html", "--webtex"],
+    "Website index": ["-o", "index.html", "--template", "barlock/templates/index.html", "--webtex"],
     "PDF document": ["-o", "manuscript.pdf"]
 }
-
-# "PDF document": ["-o", "manuscript.pdf"]
 
 for version in versions:
     logging.info(version)
