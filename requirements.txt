@@ -1,3 +1,5 @@
 pandoc-eqnos
 pandoc-fignos
 pandoc-tablenos
+subprocess
+json
