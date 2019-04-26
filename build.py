@@ -22,7 +22,8 @@ common_flags = [
 ]
 
 versions = {
-    "Website index": ["-o", "index.html", "--template", "templates/index.html", "--webtex"]
+    "Website index": ["-o", "index.html", "--template", "templates/index.html", "--webtex"],
+    "PDF document": ["-o", "manuscript.pdf"]
 }
 
 # "PDF document": ["-o", "manuscript.pdf"]
