@@ -21,7 +21,8 @@ common_flags = [
 ]
 
 versions = {
-    "Website index": ["-o", "index.html", "--template", "templates/index.html"]
+    "Website index": ["-o", "index.html", "--template", "templates/index.html", "--webtex"],
+    "PDF document": ["-o", "manuscript.pdf"]
 }
 
 for version in versions:
