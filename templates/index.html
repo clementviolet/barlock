@@ -1,0 +1,12 @@
+<header>
+  <h1>$title$</h1>
+  <div class="creators">
+    $for(creators)$
+    <span>$creators.familyname$, $creators.givennames$ -- $creators.affiliation$</span>
+    $endfor$
+  </div>
+</header>
+
+<article class="text">
+  $body$
+</article>
