@@ -2,20 +2,23 @@ html {
   font-size: 16px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Cousine:400,400i,700,700i|Tinos:400,400i,700,700i&subset=greek,greek-ext');
-
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500|Fira+Sans+Condensed:400,400i,500,500i|Fira+Sans:400,400i,500,500i&subset=greek,greek-ext');
 body {
   margin: 0px auto;
   max-width: 800px;
-  font-family: "Tinos", sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, header {
-  font-family: "Arimo", sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+b, strong {
+  font-weight: 500; 
 }
 
 pre, code {
-  font-family: "Cousine", monospace;
+  font-family: "Fira Mono", monospace;
 }
 
 
