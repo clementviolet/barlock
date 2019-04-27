@@ -24,7 +24,8 @@ common_flags = [
 versions = {
     "Website index": ["-o", "index.html", "--template", "barlock/templates/index.html", "--webtex"],
     "PDF document": ["-o", filename + ".pdf"],
-    "TEX source": ["-o", filename + ".tex"]
+    "TEX source": ["-o", filename + ".tex"],
+    "MS Word": ["-o", filename + ".docx"]
 }
 
 for version in versions:
