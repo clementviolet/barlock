@@ -11,10 +11,11 @@ body {
 
 h1, h2, h3, h4, h5, h6, header {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
 }
 
 b, strong {
-  font-weight: 500; 
+  font-weight: 500;
 }
 
 pre, code {
@@ -28,4 +29,14 @@ nav.artifacts {
   text-align: center;
   left: 0;
   position: absolute;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+span.artifacts > label {
+  visibility: hidden;
+}
+
+span.artifacts::hover > label {
+  visibility: visible;
 }
