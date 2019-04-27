@@ -1,11 +1,10 @@
 import subprocess
 import json
-import logging
 
 with open(".zenodo.json", 'r') as f:
     zenodo = json.load(f)
 
-print(zenodo)
+filename = "_".join(zenodo["title"].split()[:4])
 
 root = [
     "pandoc",
@@ -18,14 +17,16 @@ common_flags = [
     "--filter", "pandoc-tablenos",
     "--filter", "pandoc-citeproc",
     "--bibliography=references.json",
-    "--metadata-file=.zenodo.json"
+    "--metadata-file=.zenodo.json",
+    "-M filename=" + filename
 ]
 
 versions = {
     "Website index": ["-o", "index.html", "--template", "barlock/templates/index.html", "--webtex"],
-    "PDF document": ["-o", "manuscript.pdf"]
+    "PDF document": ["-o", filename + ".pdf"],
+    "TEX source": ["-o", filename + ".tex"]
 }
 
 for version in versions:
-    logging.info(version)
+    print(version)
     subprocess.run(root + versions[version]  + common_flags)

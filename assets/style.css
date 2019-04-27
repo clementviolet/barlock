@@ -21,3 +21,11 @@ pre, code {
 strong, b {
   font-weight: 500;
 }
+
+nav.artifacts {
+  background-color: #f2f2f2;
+  width: 100vw;
+  text-align: center;
+  left: 0;
+  position: absolute;
+}
