@@ -4,7 +4,7 @@ import json
 with open(".zenodo.json", 'r') as f:
     zenodo = json.load(f)
 
-filename = "_".join(zenodo["title"].split()[:4])
+filename = "_".join(zenodo["title"].split()[:6])
 
 root = [
     "pandoc",
@@ -18,7 +18,7 @@ common_flags = [
     "--filter", "pandoc-citeproc",
     "--bibliography=references.json",
     "--metadata-file=.zenodo.json",
-    "-M filename=" + filename
+    "--variable=filename:" + filename
 ]
 
 versions = {
