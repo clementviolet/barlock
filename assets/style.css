@@ -29,17 +29,3 @@ nav.artifacts {
   left: 0;
   position: absolute;
 }
-
-a.artifact {
-  background-color: slateblue;
-  width: 2em;
-  line-height: 2em;
-  border-radius: 2em;
-  color: white;
-}
-a.artifact::after {
-  background-color: red;
-}
-a.artifact.pdf::after {
-  content: "Get the PDF";
-}
