@@ -24,9 +24,9 @@ common_flags = [
 
 current_branch = os.getenv('BRANCH', 'master')
 if current_branch == "master":
-    dest = ""
+    dest = "."
 else:
-    dest = current_branch
+    dest = "./" + current_branch
 
 versions = {
     "Website index": ["-o", dest+"/"+"index.html", "--template", "barlock/templates/index.html", "--webtex"],
