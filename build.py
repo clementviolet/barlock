@@ -40,4 +40,5 @@ subprocess.run(["cp", "-r", "barlock/assets", "."])
 for version in versions:
     print(version)
     subprocess.run(root + ["-o", version] + versions[version] + common_flags)
-    subprocess.run(["mv", version, current_branch + "/" + version])
+    if current_branch != "master":
+        subprocess.run(["mv", version, current_branch + "/" + version])
