@@ -22,21 +22,21 @@ common_flags = [
     "--variable=filename:" + filename
 ]
 
-current_branch = os.getenv('BRANCH', 'master')
-if current_branch == "master":
-    dest = "."
-else:
-    dest = "./" + current_branch
-print(current_branch)
-
 versions = {
-    "Website index": ["-o", dest+"/"+"index.html", "--template", "barlock/templates/index.html", "--webtex"],
-    "PDF document": ["-o", dest + "/" + filename + ".pdf"],
-    "TEX source": ["-o", dest + "/" + filename + ".tex"],
-    "MS Word": ["-o", dest + "/" + filename + ".docx"]
+    "index.html": ["--template", "barlock/templates/index.html", "--webtex"],
+    filename + ".pdf": [],
+    filename + ".tex": [],
+    filename + ".docx": []
 }
+
+current_branch = os.getenv('BRANCH', 'master')
+if current_branch != "master":
+    subprocess.run("mkdir" + "-p" + current_branch)
+
+print("BUILD FOR" + current_branch)
 
 for version in versions:
     print(version)
     print(versions[version])
-    subprocess.run(root + versions[version]  + common_flags)
+    subprocess.run(root + "-o" + version + versions[version] + common_flags)
+    subprocess.run("mv" + version + current_branch)
