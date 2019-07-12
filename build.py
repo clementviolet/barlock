@@ -1,5 +1,6 @@
 import subprocess
 import json
+import os
 
 with open(".zenodo.json", 'r') as f:
     zenodo = json.load(f)
@@ -21,11 +22,17 @@ common_flags = [
     "--variable=filename:" + filename
 ]
 
+current_branch = os.getenv('BRANCH', 'master')
+if current_branch == "master":
+    dest = ""
+else:
+    dest = current_branch
+
 versions = {
-    "Website index": ["-o", "index.html", "--template", "barlock/templates/index.html", "--webtex"],
-    "PDF document": ["-o", filename + ".pdf"],
-    "TEX source": ["-o", filename + ".tex"],
-    "MS Word": ["-o", filename + ".docx"]
+    "Website index": ["-o", dest+"/"+"index.html", "--template", "barlock/templates/index.html", "--webtex"],
+    "PDF document": ["-o", dest + "/" + filename + ".pdf"],
+    "TEX source": ["-o", dest + "/" + filename + ".tex"],
+    "MS Word": ["-o", dest + "/" + filename + ".docx"]
 }
 
 for version in versions:
