@@ -33,6 +33,7 @@ current_branch = os.getenv('TRAVIS_BRANCH', 'master')
 print("building on branch " + current_branch)
 if (current_branch != "master"):
     subprocess.run(["mkdir", "-p", current_branch])
+    subprocess.run(["cp", "-r", "figures", current_branch])
 
 subprocess.run(["cp", "-r", "barlock/assets", "."])
 
