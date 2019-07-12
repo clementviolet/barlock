@@ -44,3 +44,22 @@ span.artifacts {
 span.artifacts a {
    color: #dedede;
 }
+
+.author {
+   font-weight: 500;
+}
+.affiliation {
+   font-weight: 400;
+   font-style: italic;
+   color: #444;
+}
+
+.creator{
+   margin-bottom: 1em;
+}
+
+summary {
+   padding: 1em;
+   margin: 1em;
+   background-color: #fcfcfc;
+}
