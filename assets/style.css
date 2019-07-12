@@ -2,15 +2,16 @@ html {
   font-size: 16px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500|Fira+Sans+Condensed:400,400i,500,500i|Fira+Sans:400,400i,500,500i&subset=greek,greek-ext');
+@import url('https://fonts.googleapis.com/css?family=Asap:400,400i,500,500i,600,600i|Inconsolata&display=swap');
+
 body {
   margin: 0px auto;
   max-width: 800px;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Asap", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, header {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Asap", sans-serif;
   font-weight: 500;
 }
 
@@ -19,7 +20,7 @@ b, strong {
 }
 
 pre, code {
-  font-family: "Fira Mono", monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 
