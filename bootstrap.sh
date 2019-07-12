@@ -1,7 +1,5 @@
 #! /bin/bash
 
-export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-
 # TinyTeX
 wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
 tlmgr install xcolor

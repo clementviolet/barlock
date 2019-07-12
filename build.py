@@ -12,6 +12,7 @@ root = [
     "manuscript.md"
 ]
 
+    subprocess.run("mkdir" + "-p" + current_branch)
 common_flags = [
     "--filter", "pandoc-fignos",
     "--filter", "pandoc-eqnos",
@@ -29,14 +30,14 @@ versions = {
     filename + ".docx": []
 }
 
-current_branch = os.getenv('BRANCH', 'master')
+current_branch = os.getenv('TRAVIS_BRANCH', 'master')
 if current_branch != "master":
     subprocess.run("mkdir" + "-p" + current_branch)
 
-print("BUILD FOR" + current_branch)
+print("BUILD FOR " + current_branch)
 
 for version in versions:
     print(version)
     print(versions[version])
-    subprocess.run(root + "-o" + version + versions[version] + common_flags)
+    subprocess.run(root + ["-o", version] + versions[version] + common_flags)
     subprocess.run("mv" + version + current_branch)
