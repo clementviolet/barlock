@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>$title$</title>
   <script src="https://hypothes.is/embed.js" async></script>
-  <link rel="stylesheet" href="barlock/assets/style.css">
+  <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
@@ -12,30 +12,30 @@
     <h1>$title$</h1>
     <section class="creators">
       $for(creators)$
-      <span>$creators.familyname$, $creators.givennames$ -- $creators.affiliation$</span>
+      <details>
+         <div class="author">$creators.familyname$, $creators.givennames$</div>
+         <div class="affiliation">$creators.affiliation$</span>
+      </details>
       $endfor$
     </section>
-    <section class="abstract">
+    <summary>
       $description$
-    </section>
+    </summary>
   </header>
 
   <nav class="artifacts">
     <span class="artifact">
-      <a class="artifact pdf" href="$filename$.pdf"><i class="far fa-file-pdf"></i></a>
-      <span class="label">PDF version</span>
+      <a class="artifact pdf" href="$filename$.pdf" title="PDF"><i class="far fa-file-pdf"></i></a>
     </span>
     <span class="artifact">
-      <a class="artifact tex" href="$filename$.tex"><i class="fas fa-code"></i></a>
-      <span class="label">TeX source</span>
+      <a class="artifact tex" href="$filename$.tex" title="LaTeX source"><i class="fas fa-code"></i></a>
     </span>
     <span class="artifact">
-      <a class="artifact doc" href="$filename$.docx"><i class="far fa-file-word"></i></a>
-      <span class="label">MS Word</span>
+      <a class="artifact doc" href="$filename$.docx" title="Word document"><i class="far fa-file-word"></i></a>
     </span>
   </nav>
 
-  <article class="text">
+  <article>
     $body$
   </article>
 
