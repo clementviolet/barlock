@@ -32,9 +32,9 @@ versions = {
 current_branch = os.getenv('TRAVIS_BRANCH', 'master')
 print("building on branch " + current_branch)
 if (current_branch != "master"):
-    subprocess.run("mkdir -p " + current_branch)
+    subprocess.run(["mkdir", "-p", current_branch])
 
 for version in versions:
     print(version)
     subprocess.run(root + ["-o", version] + versions[version] + common_flags)
-    subprocess.run("mv " + version + " " + current_branch + "/" + version)
+    subprocess.run(["mv", version, current_branch + "/" + version])
