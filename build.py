@@ -42,3 +42,17 @@ for version in versions:
     subprocess.run(root + ["-o", version] + versions[version] + common_flags)
     if current_branch != "master":
         subprocess.run(["mv", version, current_branch + "/" + version])
+
+# Clean the biobliography
+with open("references.json") as jsfile:
+    references = json.load(jsfile)
+
+# Fields to remove
+fields = ["source", "abstract", "language", "accessed", "container-title-short", "title-short", "ISSN"]
+for reference in references:
+    for field in fields:
+        reference.pop(field, None)
+
+with open("references.json", "w") as outfile:
+    json.dump(references, outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    outfile.write('\n')
