@@ -27,6 +27,7 @@ if current_branch == "master":
     dest = "."
 else:
     dest = "./" + current_branch
+print(current_branch)
 
 versions = {
     "Website index": ["-o", dest+"/"+"index.html", "--template", "barlock/templates/index.html", "--webtex"],
@@ -37,4 +38,5 @@ versions = {
 
 for version in versions:
     print(version)
+    print(versions[version])
     subprocess.run(root + versions[version]  + common_flags)
