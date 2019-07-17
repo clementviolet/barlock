@@ -13,13 +13,13 @@
     <section class="creators">
       $for(creators)$
       <div class="creator">
-         <div class="author">$creators.familyname$, $creators.givennames$</div>
+         <div class="author">$creators.givennames$ $creators.familyname$</div>
          <div class="affiliation">$creators.affiliation$</span>
       </div>
       $endfor$
     </section>
     <summary>
-      $description$
+       <strong>Abstract:</strong> $description$
     </summary>
   </header>
 
