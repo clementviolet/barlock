@@ -31,7 +31,7 @@ nav.artifacts {
   padding-bottom: 1.5rem;
 }
 
-span.artifacts {
+span.artifact {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -41,7 +41,7 @@ span.artifacts {
   border: #e5e5e5
 }
 
-span.artifacts a {
+span.artifact a {
    color: #dedede;
 }
 
