@@ -13,13 +13,24 @@ body {
    font-family: @text-font-stack;
    padding: 2em;
    margin: 0px auto;
-   max-width: 860px;
    b, strong {
       font-weight: 600;
    }
    code, pre {
       font-family: @code-font-stack;
    }
+}
+
+header {
+   background-color: lighten(@meta-color, 15%);
+   h1 {
+      margin-top: 0em;
+   }
+}
+
+.container {
+   padding: 3em;
+   max-width: 800px;
 }
 
 a {
