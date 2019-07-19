@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="$language$" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>$title$</title>
-  <script src="https://hypothes.is/embed.js" async></script>
-  <link rel="stylesheet" href="./assets/style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
-<body>
-  <header>
-    <h1>$title$</h1>
-    <section class="creators">
-      $for(creators)$
-      <div class="creator">
-         <div class="author">$creators.givennames$ $creators.familyname$</div>
-         <div class="affiliation">$creators.affiliation$</span>
-      </div>
-      $endfor$
-    </section>
-    <summary>
-       <strong>Abstract:</strong> $description$
-    </summary>
-  </header>
+   <head>
+      <meta charset="utf-8">
+      <title>$title$</title>
+      <script src="https://hypothes.is/embed.js" async></script>
+      <!--fonts-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:300,300i,400,400i,600,600i&display=swap&subset=greek" rel="stylesheet">
+      <link rel="stylesheet/less" type="test/css" href="./assets/style.less">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   </head>
+   <body>
+      <header>
+         <h1>$title$</h1>
+         <section class="creators">
+            $for(creators)$
+            <div class="creator">
+               <div class="author">$creators.givennames$ $creators.familyname$</div>
+               <div class="affiliation">$creators.affiliation$</span>
+               <div class="orcid">$creators.orcid$</div>
+               </div>
+               $endfor$
+         </section>
+         <summary>
+            $description$
+            <div class="keyworks">
+               $for(keywords)$
+               <span class="keyword">$keywords$</span>
+               $endfor$
+            </div>
+         </summary>
+      </header>
 
-  <nav class="artifacts">
-    <span class="artifact">
-      <a class="artifact pdf" href="$filename$.pdf" title="PDF"><i class="far fa-file-pdf"></i></a>
-    </span>
-    <span class="artifact">
-      <a class="artifact tex" href="$filename$.tex" title="LaTeX source"><i class="fas fa-code"></i></a>
-    </span>
-    <span class="artifact">
-      <a class="artifact doc" href="$filename$.docx" title="Word document"><i class="far fa-file-word"></i></a>
-    </span>
-  </nav>
+      <nav class="artifacts">
+         <div class="artifact pdf"><a href="$filename$.pdf" title="PDF">PDF version</a></div>
+			<a href="$notes$" title="Github repo" target="_blank"><i src="https://img.shields.io/badge/write-github-lightgrey.svg" /></a>
+         <a href="$notes$/manuscript.md" title="Github repo" target="_blank"><i src="https://img.shields.io/badge/source-markdown-blue.svg" /></a>
+         <a href="$filename$.pdf" title="Github repo" target="_blank"><i src="https://img.shields.io/badge/read-pdf-green.svg" /></a>
+         <a href="$filename$.docx" title="Github repo" target="_blank"><i src="https://img.shields.io/badge/read-docx-yellow.svg" /></a>
+      </nav>
 
-  <article>
-    $body$
-  </article>
+      <article>
+         $body$
+      </article>
 
-</body>
+   </body>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 </html>
