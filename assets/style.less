@@ -20,24 +20,30 @@ body {
    }
 }
 
+.container {
+   display: block !important;
+}
+
 header {
    background-color: lighten(@meta-color, 25%);
    h1 {
       margin-top: 0em;
    }
+   .container {
+      padding: 3em;
+      max-width: 920px;
+      width: 920px;
+      margin: 0px auto;
+   }
 }
 
-article.container {
-   padding: 3em;
-   max-width: 800px;
-   width: 800px;
-   margin: 0px auto;
-}
-section.container {
-   padding: 3em;
-   max-width: 920px;
-   width: 920px;
-   margin: 0px auto;
+article{
+   .container {
+      padding: 3em;
+      max-width: 800px;
+      width: 800px;
+      margin: 0px auto;
+   }
 }
 
 a {
