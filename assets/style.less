@@ -1,11 +1,35 @@
 @text-font-stack: "Source Sans Pro", serif;
 @code-font-stack: "Source Code Pro", monospace;
 
-@font-size: 16px;
+@font-size: 17px;
+
+@url-color: #428bca;
+@url-color-hover: darken(@url-color, 15%);
+@ref-color: #55bd7d;
+@meta-color: #a0a8a3;
 
 body {
    font-size: @font-size;
    font-family: @text-font-stack;
    padding: 2em;
    margin: 0px auto;
+   max-width: 860px;
+   b, strong {
+      font-weight: 600;
+   }
+   code, pre {
+      font-family: @code-font-stack;
+   }
+}
+
+a {
+   text-decoration: none;
+   color: @url-color;
+   &:hover {
+      color: @url-color-hover;
+   }
+}
+
+.citation {
+   color: @ref-color;
 }
