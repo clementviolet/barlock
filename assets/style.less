@@ -5,7 +5,7 @@
 
 @url-color: #428bca;
 @url-color-hover: darken(@url-color, 15%);
-@ref-color: #55bd7d;
+@ref-color: #e9380c;
 @meta-color: #a0a8a3;
 
 body {
@@ -81,8 +81,24 @@ figure {
    }
 }
 
-nav.artifacts {
-   text-align: center;
+table {
+   border-collapse: collapse;
+}
+ 
+ table td {
+   text-align: center; 
+   padding: 10px;
+   vertical-align: middle;
+   border-top: 3px solid lighten(@meta-color, 20%);
+   border-bottom: 3px solid lighten(@meta-color, 20%);
+}
+
+table th {
+   padding: 10px;
+}
+
+ nav.artifacts {
+    text-align: center;
    background-color: lighten(@meta-color, 29%);
    padding: 1em;
 }
