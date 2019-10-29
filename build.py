@@ -17,7 +17,7 @@ common_flags = [
         "--filter", "pandoc-eqnos",
         "--filter", "pandoc-tablenos",
         "--filter", "pandoc-citeproc",
-        "--bibliography=references.bib",
+        "--bibliography=references.json",
         "--csl", "barlock/plab.csl",
         "--metadata-file=.zenodo.json",
         "--variable=filename:" + filename
