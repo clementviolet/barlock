@@ -13,3 +13,6 @@ rm pandoc-2.7.3-1-amd64.deb
 
 # Python requirements (pandoc filters)
 pip install -r barlock/requirements.txt
+
+# Convert .bib file  to .json
+pandoc-citeproc --bib2json references.bib > references.json
