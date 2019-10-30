@@ -1,23 +1,28 @@
-%!TEX TS-program = xelatex
-\documentclass[11pt]{scrartcl}
-\usepackage{fontspec,xltxtra,xunicode,unicode-math}
-\usepackage{amsmath}
-\usepackage[english]{babel}
-\usepackage{geometry}
-\geometry{verbose,letterpaper,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
-% \setromanfont[Mapping=tex-text,Contextuals={NoWordInitial,NoWordFinal,NoLineInitial,NoLineFinal},Ligatures={NoCommon}]{Hoefler Text}
+% !TEX TS-program = lualatex
+\documentclass[$if(fontsize)$$fontsize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
-\setmainfont{STIX Two Text}
-\setsansfont{STIX Two Text}
-\setmonofont[Color=100C07,Scale=MatchLowercase]{Iosevka Custom}
-\setmathfont{STIX Two Math}
+%% Package geometry
+$if(geometry)$
+\usepackage[$if(papersize)$$papersize$paper,$endif$$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
 
-\usepackage[hang,flushmargin]{footmisc} 
+%% Package polyglossia
+\usepackage{polyglossia}
+\setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
+$for(polyglossia-otherlangs)$
+  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
+$endfor$
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%% Package fontspec
+\usepackage[no-math]{fontspec}
+\setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
 
-\pagestyle{plain}  
+$if(pagestyle)$
+\pagestyle{$pagestyle$}
+$else$
+\pagestyle{plain}
+$endif$
+
 % The default `plain` pagestyle just numbers the pages,
 % whereas  
 % \pagestyle{empty} 
@@ -93,7 +98,11 @@ $if(graphics)$
 \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
 $endif$
 
-
+%% linestreching
+$if(linestretch)$
+\usepackage{setspace}
+\setstretch{$linestretch$}
+$endif$
 
 % Section numbering.  
 % Here again is a variable you can specify on the commandline
