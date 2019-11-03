@@ -1,27 +1,32 @@
-% !TEX TS-program = lualatex
+
+%!TEX TS-program = lualatex
 \documentclass[$if(fontsize)$$fontsize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 %% Package geometry
 $if(geometry)$
 \usepackage[$if(papersize)$$papersize$paper,$endif$$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
+\usepackage{pdflscape}
 
 %% Package polyglossia
 \usepackage{polyglossia}
-\setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
-$for(polyglossia-otherlangs)$
-  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
-$endfor$
+\setmainlanguage{french}
+%\setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
+%$for(polyglossia-otherlangs)$
+%  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
+%$endfor$
 
 %% Package fontspec
-\usepackage[no-math]{fontspec}
-\setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+\usepackage{fontspec}
+\setmainfont{$mainfont$}
+\setmathfont{STIX Two Math}
 
-$if(pagestyle)$
-\pagestyle{$pagestyle$}
-$else$
-\pagestyle{plain}
-$endif$
+\usepackage[hang,flushmargin]{footmisc} 
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\pagestyle{plain}  
 
 % The default `plain` pagestyle just numbers the pages,
 % whereas  
