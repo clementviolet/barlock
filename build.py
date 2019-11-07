@@ -25,7 +25,7 @@ common_flags = [
 
 versions = {
         "index.html": ["--template", "barlock/templates/index.html", "--webtex"],
-        filename + ".pdf": ["--pdf-engine=lualatex"],
+        filename + ".pdf": [],
         filename + ".tex": [],
         filename + ".docx": []
         }
