@@ -25,7 +25,7 @@ common_flags = [
 
 versions = {
         "index.html": ["--template", "barlock/templates/index.html", "--webtex"],
-        filename + ".pdf": ["--pdf-engine", "xelatex"],
+        filename + ".pdf": ["--template", "barlock/templates/template.tex","--pdf-engine", "xelatex"],
         filename + ".tex": [],
         filename + ".docx": []
         }
