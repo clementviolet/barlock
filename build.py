@@ -25,7 +25,7 @@ common_flags = [
 
 versions = {
         "index.html": ["--template", "barlock/templates/index.html", "--webtex"],
-        filename + ".pdf": [],
+        filename + ".pdf": ["--pdf-engine", "xelatex"],
         filename + ".tex": [],
         filename + ".docx": []
         }
@@ -40,7 +40,12 @@ subprocess.run(["cp", "-r", "barlock/assets", "."])
 
 for version in versions:
     print(version)
-    subprocess.run(root + ["-o", version] + versions[version] + common_flags)
+    if ".tex" in version: # Create a standalone .tex document
+        root_latex = root.copy()
+        root_latex[1:1] = ["-s"]
+        subprocess.run(root_latex + ["-o", version] + versions[version] + common_flags)
+    else:
+        subprocess.run(root + ["-o", version] + versions[version] + common_flags)
     if current_branch != "master":
         subprocess.run(["mv", version, current_branch + "/" + version])
 
