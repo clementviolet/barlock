@@ -1,12 +1,17 @@
 #! /bin/bash
 
+sudo apt-get update
+
+# Fonts
+sudo apt-get install fonts-lato
+
 # TinyTeX
 wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
 tlmgr install xcolor
 tlmgr install mdwtools
 tlmgr install amsfonts
 
-#XeTeX
+# XeTeX
 tlmgr install unicode-math
 
 # Pandoc 2.7.2
