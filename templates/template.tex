@@ -14,9 +14,6 @@ $endif$
 $if(fontsize)$
   $fontsize$,
 $endif$
-$if(lang)$
-  $babel-lang$,
-$endif$
 $if(papersize)$
   $papersize$paper,
 $endif$
@@ -131,8 +128,8 @@ $endif$
 $if(author-meta)$
   pdfauthor={$author-meta$},
 $endif$
-$if(lang)$
-  pdflang={$lang$},
+$if(langue)$
+  pdflang={$langue$},
 $endif$
 $if(subject)$
   pdfsubject={$subject$},
@@ -221,7 +218,7 @@ $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
-$if(lang)$
+$if(langue)$
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -280,8 +277,8 @@ $if(subtitle)$
 \makeatother
 \subtitle{$subtitle$}
 $endif$
-$if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+$if(authors)$
+\author{$for(authors)$$authors$$sep$ \and $endfor$}
 $endif$
 \date{$date$}
 
