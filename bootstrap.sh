@@ -13,6 +13,7 @@ tlmgr install amsfonts
 
 # XeTeX
 tlmgr install unicode-math
+tlmgr install polyglossia
 
 # Pandoc 2.7.2
 wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
