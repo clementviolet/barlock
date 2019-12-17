@@ -10,6 +10,7 @@ wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
 tlmgr install xcolor
 tlmgr install mdwtools
 tlmgr install amsfonts
+tlmgr install setspace
 
 # XeTeX
 tlmgr install unicode-math
