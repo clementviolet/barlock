@@ -11,6 +11,7 @@ tlmgr install xcolor
 tlmgr install mdwtools
 tlmgr install amsfonts
 tlmgr install setspace
+tlmgr install cleveref
 
 # XeTeX
 tlmgr install unicode-math
